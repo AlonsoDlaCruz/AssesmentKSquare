@@ -1,6 +1,9 @@
-# Salesforce DX Project: Next Steps
+# Here you can find url links to Some Screenshots
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+(This in order to keep fast sync operations)
+
+https://www.icloud.com/iclouddrive/031gQ5GvQZfWJA_7QZBPg8w2A#Captura_de_pantalla_2023-02-03_100419
+https://www.icloud.com/iclouddrive/0650dms4U90rsdbFaSPRHHAHw#Captura_de_pantalla_2023-02-03_101340
 
 ## How Do You Plan to Deploy Your Changes?
 
