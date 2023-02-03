@@ -1,6 +1,9 @@
 <template>
     <!-- Header Part -->
     <lightning-card style="font-size: larger; margin-left: 30px;"><strong>Contact Search</strong></lightning-card>
+    <div class="slds-grid slds-gutters slds-p-bottom_x-small slds-p-left_x-small">
+        <lightning-input type="search" onchange={searchHandler}></lightning-input>
+    </div>
     <div class="wrapper">
         <header class="header" style="font-size: large;"></header>
         <section class="content">

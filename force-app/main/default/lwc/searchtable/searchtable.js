@@ -1,6 +1,7 @@
 import { LightningElement, track, wire, api  } from 'lwc';
 import getContacts from "@salesforce/apex/ContactListHelper.getContacts";
 import SystemModstamp from '@salesforce/schema/Account.SystemModstamp';
+import searchContact from "@salesforce/apex/ContactListHelper.searchContact"
 //import {NavigationMixin, CurrentPageReference} from 'lightning/navigation';
 
 export default class searchtable extends LightningElement {
@@ -56,7 +57,15 @@ export default class searchtable extends LightningElement {
         }
     }
 
-    
+    async searchHandler(event){
+        if(event.target.value== ""){
+            this.contacts = this.ogContacts
+        }else if(event.target.value.length > 0){
+            const searchContacts = await searchContact({searchString: event.target.value})
+
+            this.data=searchContacts;
+        }
+    }
  
 
         // ToNewContact(){
