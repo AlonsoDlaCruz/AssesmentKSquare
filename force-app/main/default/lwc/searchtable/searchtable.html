@@ -1,0 +1,91 @@
+<template>
+    <!-- Header Part -->
+    <lightning-card style="font-size: larger; margin-left: 30px;"><strong>Contact Search</strong></lightning-card>
+    <div class="wrapper">
+        <header class="header" style="font-size: large;"></header>
+        <section class="content">
+            <div class="columns" style="display: flex;">
+            <main class="main" style="width:72%; padding: 10px">
+
+                <lightning-card>
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col">
+                            <span></span>
+                        </div>
+                        <div class="slds-col">
+                            <span>
+                                <!--A Button For extra feature-->
+                                <lightning-button label="Show Selected Contacts" 
+                                 onclick={showContacts} style="margin-left: 40%" variant="brand">
+                                </lightning-button>
+                            </span>
+                        </div>
+                    </div><br/>
+                    <!-- Table start-->
+                    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                        <!--Column Header start-->
+                        <thead>
+                            <tr class="slds-line-height_reset">
+                                
+                                <th class="" scope="col">
+                                    <div class="slds-truncate" title="Name">Name</div>
+                                </th>
+                                
+                                <th class="" scope="col">
+                                    <div class="slds-truncate" title="Phone">Phone</div>
+                                </th>
+                                <th class="" scope="col">
+                                    <div class="slds-truncate" title="Email">Email</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           <!--data is an array of record which is set in .js file-->
+                            <template for:each={data} for:item="con">
+                                <tr key={con.Id}>
+                                    
+                                    <th scope="col">
+                                       <!--First Column Value as a link-->
+                                        <lightning-button label={con.Name} value={con.Name}
+                                            data-id={con.Id} onclick={showDetail} variant="base">
+                                        </lightning-button>
+                                    </th>
+                                    
+                                    <th scope="col">
+                                        <div>
+                                            <lightning-formatted-phone value={con.Phone}>
+                                            </lightning-formatted-phone>
+                                        </div>
+                                    </th>
+                                    <th scope="col">
+                                        <div>
+                                            <lightning-formatted-email value={con.Email}>
+                                            </lightning-formatted-email>
+                                        </div>
+                                    </th>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </lightning-card>
+                    
+            </main>
+            <aside class="sidebar-second" style="width:25%; padding: 10px;">
+                <lightning-card style="margin:auto; display: flex;">
+                    <div style="display: flex; flex-direction: column; margin:auto; width:300px; border:solid 2px; bordercolor:red;">
+                        <div><img class="product-img" src={contactPhoto} style="width:300px; height:300px; margin: auto;"></img></div>
+                        <div class="slds-text-heading_small">{contactName}</div>
+                        <div class="description">{contactAccount}</div>
+                        <div class="phone">{contactPhone}</div>
+                        <div class="email">{contactEmail}</div>
+                    </div>
+                </lightning-card>
+                    
+            </aside>
+            </div>
+        </section>
+        </div>
+    
+
+     
+</template>

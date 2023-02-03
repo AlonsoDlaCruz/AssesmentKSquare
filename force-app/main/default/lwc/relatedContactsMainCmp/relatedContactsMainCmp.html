@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="Contact Search">
+        
+        <div class="slds-card__body_inner">
+
+            <div class="slds-grid slds-gutters slds-p-bottom_x-small slds-p-left_x-small">
+                <lightning-input type="search" onchange={searchHandler}></lightning-input>
+            </div>
+
+            <lightning-button label="Search"></lightning-button>
+
+            <lightning-datatable key-field="id" data={contacts} columns={columns} id="tablex" 
+                hide-checkbox-column="true" selected-rows="false">
+
+            </lightning-datatable>   
+        </div>
+
+        <div slot="actions">
+            <lightning-button label="Create" onclick={ToNewContact}></lightning-button>
+        </div>
+
+    </lightning-card>
+
+    
+</template>
