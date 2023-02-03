@@ -58,9 +58,9 @@ export default class searchtable extends LightningElement {
     }
 
     async searchHandler(event){
-        if(event.target.value== ""){
+        if(event.target.value.length <= 2){
             this.contacts = this.ogContacts
-        }else if(event.target.value.length > 0){
+        }else if(event.target.value.length > 2){
             const searchContacts = await searchContact({searchString: event.target.value})
 
             this.data=searchContacts;
