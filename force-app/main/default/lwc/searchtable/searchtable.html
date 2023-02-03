@@ -11,12 +11,13 @@
                 <lightning-card>
                     <div class="slds-grid slds-gutters">
                         <div class="slds-col">
-                            <span><div class="slds-grid slds-gutters slds-p-bottom_x-small slds-p-left_x-small">
-                                <lightning-input type="search" onchange={searchHandler}></lightning-input>
-                            </div></span>
+                            <span></span>
                         </div>
                         <div class="slds-col">
                             <span>
+                                <div class="slds-grid slds-gutters slds-p-bottom_x-small slds-p-left_x-small">
+                                    <lightning-input type="search" onchange={searchHandler}></lightning-input>
+                                </div>
                                 <!--A Button For extra feature-->
                                 <lightning-button label="Show Selected Contacts" 
                                  onclick={showContacts} style="margin-left: 40%" variant="brand">
