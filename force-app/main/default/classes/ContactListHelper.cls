@@ -2,8 +2,8 @@ public with sharing class ContactListHelper {
 
 
     @AuraEnabled(cacheable=True)
-    public static List<Contact> getContacts(){
-        return [SELECT Id, Name, FirstName, LastName, urlprofile__c, Photourl__c, AccountId, account.name, Phone, Email FROM Contact LIMIT 1000];
+    public static List<Contact> getContacts(string record){
+        return [SELECT Id, Name, FirstName, LastName, Photourl__c, AccountId, account.name, Phone, Email FROM Contact WHERE AccountId =: record];
     }
 
     @AuraEnabled(cacheable=True)

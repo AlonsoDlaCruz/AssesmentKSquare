@@ -17,7 +17,8 @@ export default class searchtable extends LightningElement {
     contactPhoto='https://www.creativefabrica.com/wp-content/uploads/2020/08/03/Gold-Pattern-Design-Graphics-4831869-1-580x435.png'
 
 // Getting Contacts using Wire Service
-    @wire(getContacts)
+    @wire(getContacts,{
+        record: '$recordId' })
     contacts(result) {
         if (result.data) {
             this.data = result.data;
